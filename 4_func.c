@@ -13,15 +13,15 @@ void process_array(double *arr, int len, double x)
 
 	for (i = 0; i < len; i++)
 	{
-		if (arr[i] == x)
+		if (fabs(arr[i] - x) < ep)
 		{
 			start = i;
 			k = i;
 
-			while (k < len && arr[k] == x) k++;
+			while (k < len && fabs(arr[k] -  x) < ep) k++;
 			end = k - 1;
 
-			otrezki[2 * count]     = start;
+			otrezki[2 * count] = start;
 			otrezki[2 * count + 1] = end;
 			count++;
 

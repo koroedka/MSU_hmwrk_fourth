@@ -9,17 +9,17 @@ int main(void)
 	int len = 0, capacity = 2;
 	FILE *f;
 
-	printf("введи x: ");
+	printf("enter x: ");
 	if (scanf("%lf", &x) != 1)
 	{
-		printf("неверный ввод\n");
+		printf("enter error\n");
 		return -1;
 	}
 
 	f = fopen("4_data.txt", "r");
 	if (f == NULL)
 	{
-		printf("ошибка файла\n");
+		printf("file error\n");
 		return -2;
 	}
 
@@ -36,6 +36,9 @@ int main(void)
 		arr[len - 1] = current;
 	}
 	fclose(f);
+	printf ("array before process\n");
+	print_arr(arr, len);
+	printf ("array after process\n");
 
 	process_array(arr, len, x);
 	print_arr(arr, len);
